@@ -1,0 +1,13 @@
+    <p>Всего чатов: {{ threads.length }}</p>
+
+    <input ng-model='threadFilter'>
+    <select ng-model="orderProp">
+        <option value="name">name</option>
+        <option value="-name">-name</option>
+    </select>
+
+    <ul>
+        <li ng-repeat="thread in threads | filter:threadFilter | orderBy:orderProp">
+            <a href="#/threads/{{ thread.id }}">{{ thread.name }} {{ thread.last_message }}</a>
+        </li>
+    </ul>

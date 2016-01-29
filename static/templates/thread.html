@@ -1,0 +1,13 @@
+{{ accessGranted }}
+<div ng-if="accessGranted">
+    <p>{{ thread.name }}</p>
+    <textarea ng-model='threadMain'></textarea>
+
+    <ul>
+        <li ng-repeat="participant in thread.participants">{{ participant }}</li>
+    </ul>
+
+</div>
+<div ng-if="!accessGranted">12345</div>
+
+
